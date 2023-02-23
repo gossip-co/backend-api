@@ -64,3 +64,5 @@ path: '/subscription'
     sub_path: '/groups/<str:user_id>/'
         method: 
             GET
+
+# Create account api 
