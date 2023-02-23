@@ -1,0 +1,66 @@
+path: '/group'
+    
+    sub_path: '/search/<str:group_slug>/'
+        method: 
+            GET
+        return :
+            404 Or group_detail
+
+    sub_path: 'is_group_created_by_user'
+        method: 
+            GET
+        return: 
+            404 Or group_detail (group_id, group_icon, total_member)
+
+
+    sub_path: '/create'
+        method:
+            POST
+        field_requirements:
+            'name'
+            # 'name', 'about_group', 'group_icon', 'group_timeline_image', 'group_intro_video', 'group_subscription_rate'
+    
+    sub_path: '/edit_group/<str:group_id>/'
+        methiod: 
+            PATCH
+
+    sub_path: '/current_group_detail/'
+        method: 
+            GET
+
+
+path: '/analytics'
+
+    sub_path: '/user_joined/?week', '/user_joined/?month', '/user_joined/?total'
+        method:
+            GET
+
+
+path: '/user_profile'
+    
+    sub_path: '/<str:user_id>/'
+        method: 
+            GET
+
+    sub_path: '/update'
+        methiod: 
+            PATCH
+        field_requirements:
+            'timeline_img', 'profile_img', 'bio', 'twitter_username', 'instagram_username'
+    # We don tneed create profile, beacuse profile is automatic creaetd while creating the user 
+
+
+
+path: '/subscription'
+
+    sub_path: '/create/<str:group_id>/'
+        method: 
+            POST
+        
+    sub_path: '/cancel/<str:group_id>/'
+        method: 
+            POST
+
+    sub_path: '/groups/<str:user_id>/'
+        method: 
+            GET
