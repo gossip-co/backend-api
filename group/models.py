@@ -14,9 +14,9 @@ class Group(models.Model):
     timeline_img = models.FileField(null=True, blank=True)
     intro_video = models.FileField(null=True, blank=True)
     subscription_rate = models.PositiveIntegerField(null=True, blank=True)
-    total_member = models.PositiveBigIntegerField(null=True, blank=True)
+    total_member = models.PositiveBigIntegerField(default=0, null=True, blank=True)
     members = models.ManyToManyField(User, related_name="group_members", blank=True)
-    slug = models.SlugField(null=True, blank=True)
+    slug = models.SlugField(null=True, blank=True, max_length=200)
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     is_launched = models.BooleanField(default=False)
 
