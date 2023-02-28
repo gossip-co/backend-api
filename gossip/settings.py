@@ -22,6 +22,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'userprofile.apps.UserprofileConfig',
     'group.apps.GroupConfig',
+    'subscription.apps.SubscriptionConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
